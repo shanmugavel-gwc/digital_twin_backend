@@ -28,6 +28,7 @@ class Settings(BaseSettings):
     sharepoint_client_secret: SecretStr = SecretStr("")
     sharepoint_site: str = ""        # e.g. contoso.sharepoint.com:/sites/Plant
     sharepoint_folder: str = ""      # e.g. Shared Documents/Twin
+    cors_origins: str = "http://localhost:5173"   # comma-separated browser origins allowed to call the API
     allow_runtime_connections: bool = False   # UI "Add connection" is always on when APP_ENV=dev; set true to allow it elsewhere
     # Notifications (app/factory/notify.py). Empty = NOT_CONFIGURED: messages are prepared and shown, never faked as sent.
     smtp_host: str = ""

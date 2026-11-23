@@ -10,3 +10,6 @@ simpy
 langchain-core
 pytest
 pymysql
+python-dotenv
+reportlab
+openpyxl

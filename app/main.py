@@ -33,7 +33,7 @@ def _warm():
 
 app = FastAPI(title="Digital Twin Agent", version="0.3.0", lifespan=lifespan)
 
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"], allow_methods=["GET", "POST"],
+app.add_middleware(CORSMiddleware, allow_origins=[o.strip() for o in settings.cors_origins.split(",") if o.strip()], allow_methods=["GET", "POST"],
                    allow_headers=["Content-Type", "X-API-Key", "X-User", "Last-Event-ID"])
 
 if not settings.api_key.get_secret_value():
