@@ -1,0 +1,22 @@
+# Build context = the backend folder (standalone backend repo or `docker build backend`).
+# Secrets must never reach the build context or an image layer.
+.env
+.env.*
+!.env.example
+*.env.local
+
+# not needed in the image
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+tests/
+*.log
+.git/
+.github/
+.vscode/
+.idea/
